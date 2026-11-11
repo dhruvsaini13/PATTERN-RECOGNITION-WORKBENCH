@@ -1,0 +1,69 @@
+:root {
+  color-scheme: light;
+  --bg: #f5f6fa;
+  --card: #ffffff;
+  --text: #1f2430;
+  --muted: #667085;
+  --border: #e3e6ee;
+  --accent: #3b5bdb;
+  --accent-soft: #edf0ff;
+  --ok: #2b8a3e;
+  --bad: #c92a2a;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); }
+h1, h2, h3 { margin: 0 0 8px; }
+h2 { font-size: 1.15rem; }
+h3 { font-size: 1rem; }
+p { margin: 4px 0 12px; color: var(--muted); }
+
+.app-header { background: var(--card); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.app-header h1 { font-size: 1.25rem; }
+.status { font-size: 0.85rem; padding: 4px 10px; border-radius: 999px; background: #fff0f0; color: var(--bad); }
+.status.ok { background: #ebfbee; color: var(--ok); }
+
+.tabs { display: flex; gap: 4px; padding: 0 24px; background: var(--card); border-bottom: 1px solid var(--border); overflow-x: auto; }
+.tab { border: none; background: none; padding: 12px 16px; cursor: pointer; font-size: 0.95rem; color: var(--muted); border-bottom: 3px solid transparent; white-space: nowrap; }
+.tab:hover { color: var(--text); }
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); font-weight: 600; }
+
+main { max-width: 1100px; margin: 0 auto; padding: 24px; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-bottom: 18px; }
+
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.stat { background: var(--accent-soft); border-radius: 8px; padding: 12px 14px; }
+.stat .label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.stat .value { font-size: 1.4rem; font-weight: 700; }
+
+button.btn { background: var(--accent); color: white; border: none; border-radius: 8px; padding: 9px 16px; cursor: pointer; font-size: 0.92rem; }
+button.btn:hover:not(:disabled) { filter: brightness(1.08); }
+button.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+button.btn.secondary { background: var(--accent-soft); color: var(--accent); }
+
+label.field { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--muted); }
+input[type='text'], input[type='number'], select { padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.92rem; background: white; color: var(--text); }
+input[type='file'] { font-size: 0.9rem; }
+
+.error { background: #fff0f0; border: 1px solid #ffc9c9; color: var(--bad); padding: 10px 14px; border-radius: 8px; margin-bottom: 14px; white-space: pre-wrap; }
+.notice { background: var(--accent-soft); color: var(--accent); padding: 10px 14px; border-radius: 8px; margin-bottom: 14px; }
+
+.table-wrap { overflow: auto; border: 1px solid var(--border); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.85rem; }
+th, td { padding: 7px 10px; text-align: right; border-bottom: 1px solid var(--border); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { background: #fafbff; position: sticky; top: 0; font-weight: 600; }
+.badge { padding: 2px 8px; border-radius: 999px; font-size: 0.75rem; background: #ebfbee; color: var(--ok); }
+.badge.no { background: #fff0f0; color: var(--bad); }
+.plot-img { max-width: 100%; border: 1px solid var(--border); border-radius: 8px; }
+.muted { color: var(--muted); font-size: 0.85rem; }
+
+.pipeline { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; background: #fcfcff; }
+.step { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 8px; background: white; }
+.step .btn { padding: 3px 10px; font-size: 0.8rem; }
+.pipeline > .row .btn { padding: 4px 12px; font-size: 0.85rem; }
+label.field.small input[type='number'], label.field.small input[type='text'], label.field.small select { width: 130px; }
+code { background: var(--accent-soft); padding: 1px 6px; border-radius: 4px; }
+.charts { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 12px; }
